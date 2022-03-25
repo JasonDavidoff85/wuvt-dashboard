@@ -1,0 +1,26 @@
+/* .chat-view {
+    height: 30px;
+    width: auto;
+    background-color: rgba(84, 84, 250, 0.911);
+    border-radius: 20px;
+} */
+
+.chat-box {
+    height: 200px;
+    width: 275px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.flex-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+form {
+ margin: 10px;
+}
+
+mat-card {
+    max-width: 300px;
+}

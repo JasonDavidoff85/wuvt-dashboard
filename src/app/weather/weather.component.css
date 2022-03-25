@@ -1,0 +1,7 @@
+mat-card {
+    min-height: 150px;
+}
+
+mat-icon {
+    transform: scale(2);
+}

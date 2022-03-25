@@ -1,0 +1,12 @@
+mat-list :nth-child(2n+1) {
+    background-color: rgb(235, 235, 235) !important;
+}
+
+mat-list-item {
+    max-height: 30px;
+}
+
+:host /deep/ .mat-list-item-content {
+    font-size: 12px;
+    max-height: 30px;
+  }
