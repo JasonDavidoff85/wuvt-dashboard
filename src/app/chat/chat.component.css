@@ -24,3 +24,18 @@ form {
 mat-card {
     max-width: 300px;
 }
+ .text {
+    padding: 3px;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+.blue {
+    background-color: rgb(97, 97, 255);
+}
+
+.grey {
+    background-color: rgb(188, 187, 187);
+}
+

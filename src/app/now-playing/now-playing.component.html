@@ -1,10 +1,10 @@
 <mat-card>
-    <img mat-card-image src="./assets/img/albumPlaceholder.jpeg">
+    <img mat-card-image [src]="exampleSong.albumArt">
     
-    <mat-card-content>
-        <p>DJ: "dj name"</p>
-        <p>title: "song title"</p>
-        <p>artist: "artist name"</p>
+    <mat-card-content class="container m-0 p-0">
+        <p class="row"><b>DJ:</b> {{exampleSong.dj}}</p>
+        <p class="row"><b>Title:</b><marquee behavior="scroll" scrollAmount="2" direction="right">{{exampleSong.title}}</marquee></p>
+        <p class="row"><b>Artist:</b> {{exampleSong.artist}}</p>
     </mat-card-content>
 </mat-card>
 

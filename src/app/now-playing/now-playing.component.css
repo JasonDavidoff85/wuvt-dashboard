@@ -5,3 +5,13 @@ img {
 mat-card {
     max-width: 200px;
 }
+
+marquee {
+    max-width: 120px;
+}
+
+b {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    width: fit-content;
+}

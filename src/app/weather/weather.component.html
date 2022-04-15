@@ -1,6 +1,8 @@
 <mat-card>
-    <div class="d-flex flex-column justify-content-center align-items-center">
-        <mat-card-title>Weather</mat-card-title>
-        <mat-icon class="m-4">wb_sunny</mat-icon>
-    </div>
+    <mat-card-title>{{data[0].temperature}}&#176;F Blacksburg</mat-card-title>
+    <br>
+    <mat-card-content>{{data[0].detailedForecast}}</mat-card-content>
+    <mat-card-content class="text-center"><h3>{{data[1].name}}:</h3></mat-card-content>
+    <mat-card-content>{{data[1].detailedForecast}}</mat-card-content>
+    
 </mat-card>

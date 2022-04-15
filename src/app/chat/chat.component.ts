@@ -11,6 +11,11 @@ export class ChatComponent implements OnInit {
 
   messages = [{from: 1, content: "hello"},{from: 1, content: "nice to meet you"}, {from: 2, content: "nice to meet you too"}]
 
+  addMsg(msg: string) {
+    console.log("adding: ", msg);
+    this.messages.push({from: 1, content: msg});
+  }
+
   ngOnInit(): void {
   }
 

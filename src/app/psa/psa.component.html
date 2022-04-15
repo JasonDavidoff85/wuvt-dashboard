@@ -1,5 +1,5 @@
 <mat-card class="container">
-    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-interval="false">
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-interval="false">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active option" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="option" aria-label="Slide 2"></button>
@@ -7,16 +7,16 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <h2>Example PSA</h2>
-        <p class="psa">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus mauris, consectetur vitae mollis quis, auctor in tortor. In ac elit a ante pulvinar congue. Duis dapibus, mi vel gravida fringilla, nibh ipsum tincidunt orci, ac ullamcorper arcu velit vel ante. Vestibulum ac malesuada leo, vel tristique quam. Duis ligula quam, tincidunt ac dignissim quis, consequat finibus sem.</p>
+            <h2>PSA #{{psas[0].number}}</h2>
+            <p class="psa">{{psas[0].text}}</p>
         </div>
         <div class="carousel-item">
-            <h2>Example PSA</h2>
-            <p class="psa">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus mauris, consectetur vitae mollis quis, auctor in tortor. In ac elit a ante pulvinar congue. Duis dapibus, mi vel gravida fringilla, nibh ipsum tincidunt orci, ac ullamcorper arcu velit vel ante. Vestibulum ac malesuada leo, vel tristique quam. Duis ligula quam, tincidunt ac dignissim quis, consequat finibus sem.</p>
+            <h2>PSA #{{psas[1].number}}</h2>
+            <p class="psa">{{psas[1].text}}</p>
         </div>
         <div class="carousel-item">
-            <h2>Example PSA</h2>
-            <p class="psa">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus mauris, consectetur vitae mollis quis, auctor in tortor. In ac elit a ante pulvinar congue. Duis dapibus, mi vel gravida fringilla, nibh ipsum tincidunt orci, ac ullamcorper arcu velit vel ante. Vestibulum ac malesuada leo, vel tristique quam. Duis ligula quam, tincidunt ac dignissim quis, consequat finibus sem.</p>
+            <h2>PSA #{{psas[2].number}}</h2>
+            <p class="psa">{{psas[2].text}}</p>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

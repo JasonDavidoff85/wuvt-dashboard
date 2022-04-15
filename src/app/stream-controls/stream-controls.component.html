@@ -1,19 +1,11 @@
-<mat-card>
-    <mat-card-content>
-        <!-- <button mat-button> -->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <mat-icon mat-list-icon>fast_rewind</mat-icon>
-                    </div>
-                    <div class="col-4">
-                        <mat-icon mat-list-icon>play_circle_filled</mat-icon>
-                    </div>
-                    <div class="col-4">
-                        <mat-icon mat-list-icon>fast_forward</mat-icon>
-                    </div>
-                </div>
-            </div>
-          <!-- </button> -->
-    </mat-card-content>
-</mat-card>
+<audio #audio preload="none">
+    <source src="http://stream.wuvt.vt.edu:80/wuvt-hq.ogg" type="application/ogg" />
+</audio>
+<div class="d-flex justify-content-center">
+        <button mat-mini-fab *ngIf="playing" (click)="audio.pause() ; playing = false" color="primary">
+            <mat-icon>stop</mat-icon>
+        </button>
+        <button mat-mini-fab *ngIf="!playing" (click)="audio.play() ; playing = true" color="primary">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+</div>

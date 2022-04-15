@@ -9,6 +9,11 @@ export class StreamControlsComponent implements OnInit {
 
   constructor() { }
 
+  options = ["play_arrow", "stop"]
+  status = this.options[0]
+  playing = false;
+
+
   ngOnInit(): void {
   }
 
