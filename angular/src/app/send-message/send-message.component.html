@@ -1,0 +1,7 @@
+<mat-form-field class="align-self-center" appearance="fill">
+    <mat-label>Send Message to DJ!</mat-label>
+    <input #message matInput>
+</mat-form-field>
+<button (keydown)="sendMessage(message.value); message.value=''" (click)="sendMessage(message.value); message.value=''" class="align-self-center" mat-mini-fab color="primary" aria-label="send message">
+    <mat-icon>send</mat-icon>
+</button>

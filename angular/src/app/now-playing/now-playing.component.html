@@ -1,10 +1,14 @@
 <mat-card>
-    <img mat-card-image [src]="exampleSong.albumArt">
+    <img mat-card-image *ngIf="!isImageLoading; else noImageFound" [src]="currentTrack.albumArt">
+    <ng-template #noImageFound>
+        <img mat-card-image src="./assets/img/albumPlaceholder.jpeg" alt="Fallbackimage">
+   </ng-template>
     
     <mat-card-content class="container m-0 p-0">
-        <p class="row"><b>DJ:</b> {{exampleSong.dj}}</p>
-        <p class="row"><b>Title:</b><marquee behavior="scroll" scrollAmount="2" direction="right">{{exampleSong.title}}</marquee></p>
-        <p class="row"><b>Artist:</b> {{exampleSong.artist}}</p>
+        <p class="row"><b>DJ:</b> {{currentTrack.dj}}</p>
+        <p class="row"><b>Title:</b><marquee behavior="scroll" scrollAmount="2" direction="right">{{currentTrack.title}}</marquee></p>
+        <p class="row"><b>Artist:</b> {{currentTrack.artist}}</p>
+        <p class="row"><b>Album:</b> {{currentTrack.album}}</p>
     </mat-card-content>
 </mat-card>
 

@@ -21,6 +21,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
+import { SendMessageComponent } from './send-message/send-message.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {MatInputModule} from '@angular/material/input';
     WeatherComponent,
     LastPlayedComponent,
     PsaComponent,
+    SendMessageComponent,
   ],
   imports: [
     BrowserModule,
