@@ -24,6 +24,8 @@ import {MatInputModule} from '@angular/material/input';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { AddPSAComponent } from './add-psa/add-psa.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     MatButtonModule,
     HttpClientModule,
     MatInputModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FormsModule,
+    MatSnackBarModule
     
   ],
   providers: [],

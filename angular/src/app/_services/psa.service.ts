@@ -12,7 +12,11 @@ export class PSAservice {
 
   addPSA(psa: PSA) {
     return this.http.post(`http://localhost:3030/psa/addpsa`, psa);
-}
+  }
+
+  markInactive(num: number) {
+    return this.http.get(`http://localhost:3030/psa/markinactive/${num}`)
+  }
 
 
 

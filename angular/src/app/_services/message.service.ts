@@ -6,8 +6,8 @@ import { Message } from '../_models/Message';
 export class MessageFetch {
   constructor(private http: HttpClient) { }
 
-  getAllMessages() {
-      return this.http.get<Message[]>(`http://localhost:3030/chat/getmsg`);
+  getAllMessages(time: Date) {
+      return this.http.get<Message[]>(`http://localhost:3030/chat/getmsg/${time}`);
   }
 
   sendMessage(msg: Message) {

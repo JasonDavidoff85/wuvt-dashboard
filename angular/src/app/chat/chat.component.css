@@ -8,8 +8,11 @@
 .chat-box {
     height: 200px;
     width: 275px;
-    border: 1px solid black;
-    border-radius: 10px;
+}
+
+.chatAlt {
+    min-height: 200px !important;
+    text-align: center;
 }
 
 .flex-row {
@@ -25,7 +28,7 @@ mat-card {
     max-width: 300px;
 }
  .text {
-    padding: 3px;
+    padding: 5px;
     color: white;
     border-radius: 8px;
     margin-bottom: 0px;

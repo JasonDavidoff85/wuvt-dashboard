@@ -12,7 +12,7 @@ function sendMessage(req, res, next) {
 }
 
 function getAllMessages(req, res, next) {
-    messageService.getAllMessages()
+    messageService.getAllMessages(req.params.date)
     .then((messages) => res.json(messages))
     .catch((err) => next(err));
 }

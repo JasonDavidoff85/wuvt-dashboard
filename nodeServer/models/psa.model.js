@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     text: { type: String, required: true },
-    number: { type: Number, required: true },
+    number: { type: Number,unique: true, required: true },
     isActive: { type: Boolean, default: true}
 });
 

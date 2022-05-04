@@ -5,10 +5,26 @@
    </ng-template>
     
     <mat-card-content class="container m-0 p-0">
-        <p class="row"><b>DJ:</b> {{currentTrack.dj}}</p>
-        <p class="row"><b>Title:</b><marquee behavior="scroll" scrollAmount="2" direction="right">{{currentTrack.title}}</marquee></p>
-        <p class="row"><b>Artist:</b> {{currentTrack.artist}}</p>
-        <p class="row"><b>Album:</b> {{currentTrack.album}}</p>
+        <p class="row">
+            <b>DJ:</b>
+            <marquee class="dj" *ngIf="currentTrack.dj.length >= 18; else noScrollDJ" behavior="scroll" scrollAmount="2" direction="left">{{currentTrack.dj}}</marquee>
+            <ng-template #noScrollDJ>{{currentTrack.dj}}</ng-template>
+        </p>
+        <p class="row">
+            <b>Title:</b>
+            <marquee class="title" *ngIf="currentTrack.title.length >= 18; else noScrollTitle" behavior="scroll" scrollAmount="2" direction="left">{{currentTrack.title}}</marquee>
+            <ng-template #noScrollTitle>{{currentTrack.title}}</ng-template>
+        </p>
+        <p class="row">
+            <b>Artist:</b>
+            <marquee class="artist" *ngIf="currentTrack.artist.length >= 18; else noScrollArtist" behavior="scroll" scrollAmount="2" direction="left">{{currentTrack.artist}}</marquee>
+            <ng-template #noScrollArtist>{{currentTrack.artist}}</ng-template>
+        </p>
+        <p class="row">
+            <b>Album:</b>
+            <marquee class="album" *ngIf="currentTrack.album.length >= 18; else noScrollAlbum" behavior="scroll" scrollAmount="2" direction="left">{{currentTrack.album}}</marquee>
+            <ng-template #noScrollAlbum>{{currentTrack.album}}</ng-template>
+        </p>
     </mat-card-content>
 </mat-card>
 

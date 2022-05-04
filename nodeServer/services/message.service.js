@@ -14,6 +14,6 @@ async function SendMessage(msg) {
     });
 }
 
-async function getAllMessages() {
-   return await message.find();
+async function getAllMessages(date) {
+   return await message.find({sentTime: {$gte: new Date(date)}});
 }

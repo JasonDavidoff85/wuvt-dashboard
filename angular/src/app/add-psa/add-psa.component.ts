@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PSAservice } from '../_services/psa.service';
 import { PSA } from '../_models/PSA';
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'app-add-psa',
@@ -10,7 +11,8 @@ import { PSA } from '../_models/PSA';
 export class AddPSAComponent implements OnInit {
 
   constructor(
-    private PsaService: PSAservice
+    private PsaService: PSAservice,
+    private notificationService: NotificationService
   ) { }
 
   submitPSA(text: string, number: string) {
@@ -18,7 +20,23 @@ export class AddPSAComponent implements OnInit {
     this.PsaService.addPSA({text: text, number: parseInt(number), isActive: true})
     .subscribe(
       (success) => {
-        console.log("success")
+        this.notificationService.showNotif("Submitted!", "Success")
+      },
+      (error) => {
+        this.notificationService.showNotif(error, "Error")
+      }
+    )
+  }
+
+
+  inactivePsa(num: string) {
+    this.PsaService.markInactive(parseInt(num))
+    .subscribe(
+      (success) => {
+        this.notificationService.showNotif("1 PSA updated", "Success")
+      },
+      (error) => {
+        this.notificationService.showNotif(error, "Error")
       }
     )
   }

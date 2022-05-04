@@ -9,3 +9,14 @@ mat-card {
 .psaNumber {
     max-width: 100px;
 }
+
+.button {
+    margin-top: 8px;
+}
+
+.psaNum {
+    max-width: 100px;
+}
+.goBack {
+    max-width: 170px;
+}

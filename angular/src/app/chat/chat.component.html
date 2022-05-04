@@ -1,16 +1,20 @@
-<mat-card>
-    <mat-card-title>
-        chat
-        <mat-slide-toggle></mat-slide-toggle>
+<mat-card class="container">
+    <mat-card-title class="d-flex justify-content-between">
+        <p>chat</p>
+        <mat-slide-toggle (change)="getMessages()" [(ngModel)]="chatOn"></mat-slide-toggle>
     </mat-card-title>
     <mat-card-header>
         
     </mat-card-header>
-    <cdk-virtual-scroll-viewport class="chat-box" appendOnly itemSize="3">
+    <cdk-virtual-scroll-viewport *ngIf="chatOn; else chat" class="chat-box" appendOnly itemSize="3">
         <div class="d-flex flex-column">
-        <div *cdkVirtualFor="let message of messages" [ngClass]="message.from == 1 ? 'justify-content-end' : 'justify-content-start'" class="d-inline-flex m-2"><p [ngClass]="message.from == 1 ? 'blue' : 'grey'" class="text" >{{message.content}}</p></div>
+            <div *cdkVirtualFor="let message of messages" class="d-inline-flex m-2"><p class="blue text" >{{message.text}}</p></div>
         </div>
     </cdk-virtual-scroll-viewport>
+    <ng-template #chat>
+        <div class="chatAlt">
+        <p cclass="text-center">To allow listeners to send you messages,</p>
+        <p class="text-center">Toggle the chat!</p>
+        </div>
+    </ng-template>
 </mat-card>
-
-<button mat-button (click)="getMessages()">CLICK ME</button>

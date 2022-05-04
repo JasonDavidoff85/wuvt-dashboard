@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../_models/Message';
 import { MessageFetch } from '../_services/message.service'
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'app-send-message',
@@ -9,8 +10,11 @@ import { MessageFetch } from '../_services/message.service'
 })
 export class SendMessageComponent implements OnInit {
 
+  
+
   constructor(
-    private messageFetch: MessageFetch
+    private messageFetch: MessageFetch,
+    private notificationService: NotificationService
   ) { }
 
   sendMessage($event: string) {
@@ -18,6 +22,7 @@ export class SendMessageComponent implements OnInit {
     this.messageFetch.sendMessage({text: $event, isDj: false, date: new Date()})
     .subscribe(
       (success) => {
+        this.notificationService.showNotif("Sent!", "Success")
         console.log("Send message result",success)
       }
     )

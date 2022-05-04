@@ -9,7 +9,7 @@
     position: absolute !important;
 } */
 .psa {
-    min-height: 175px;
+    min-height: 170px;
 }
 
 .carousel-control-prev {
@@ -21,9 +21,17 @@
 }
 
 mat-card {
-    min-height: 250px;
+    min-height: 230px;
 }
 
 mat-icon {
     cursor: pointer;
+}
+
+.psaText {
+    font-family: 'Courier New', monospace
+}
+
+.psaButton {
+    width: 115px;
 }

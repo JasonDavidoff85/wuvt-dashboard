@@ -4,14 +4,31 @@ img {
 
 mat-card {
     max-width: 200px;
+    min-width: 200px;
 }
 
-marquee {
+/* marquee {
     max-width: 120px;
-}
+} */
 
 b {
     margin-left: 0px !important;
     padding-left: 0px !important;
     width: fit-content;
+}
+
+.dj {
+    max-width: 126px;
+}
+
+.title {
+    max-width: 120px;
+}
+
+.artist {
+    max-width: 100px;
+}
+
+.album {
+    max-width: 90px;
 }

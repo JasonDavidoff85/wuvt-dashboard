@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageFetch } from '../_services/message.service';
 import { Message } from '../_models/Message';
+import {Subscription, timer, map, interval, Observable, mergeMap} from 'rxjs';  
 
 @Component({
   selector: 'app-chat',
@@ -12,24 +13,30 @@ export class ChatComponent implements OnInit {
   constructor(
     private messageFetch: MessageFetch
   ) { }
-  message: string = '';
-  messages = [{from: 1, content: "hello"},{from: 1, content: "nice to meet you"}, {from: 2, content: "nice to meet you too"}]
-
-  addMsg(msg: string) {
-    console.log("adding: ", msg);
-    this.messages.push({from: 1, content: msg});
-  }
+  messages: Message[] = []
+  timeSinceChatOn!: Date;
+  chatOn: boolean = false;
+  poll: Observable<Message[]> = interval(2000).pipe(mergeMap(() => this.messageFetch.getAllMessages(this.timeSinceChatOn)));
 
   getMessages() {
-    this.messageFetch.getAllMessages()
-    .subscribe(
-      (messages) => {
-        console.log(messages)
-      }
-    )
+    if (this.chatOn) {
+      this.timeSinceChatOn = new Date();
+      this.poll.subscribe(
+        (messages) => {
+          console.log(messages)
+          this.messages = messages
+        }
+      );
+    }
+    
+  }
+
+  testFunc() {
+    console.log("nice")
   }
 
   ngOnInit(): void {
+    
   }
 
 }

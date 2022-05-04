@@ -12,31 +12,28 @@ export class PsaComponent implements OnInit {
   constructor(
     private psaService: PSAservice
   ) { }
-  activePSA: PSA = {
-    text: "wordsdsajlnkfdnasjklfnsadjklfnsaljkdnfljksadnfjklsadbfn",
-    number: 23,
-    isActive: true
-  }
   psas: PSA[] = []
   curPSA = 0
 
   nextPSA() {
     let numPSA = this.psas.length;
     this.curPSA = (this.curPSA + 1) % numPSA
-    console.log("Clicked")
   }
 
-  ngOnInit(): void {
+  refreshPSA() {
     this.psaService.getAllPSAs()
     .subscribe(
       (psas) => {
         this.psas = psas
-        console.log(this.psas)
       },
       (error) => {
         console.log(error);
       }
     )
+  }
+
+  ngOnInit(): void {
+    this.refreshPSA();
   }
 
 }
