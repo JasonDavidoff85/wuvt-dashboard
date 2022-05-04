@@ -5,4 +5,5 @@ mongoose.connect(process.env.MONGODB_URI || config.connectionString, { useNewUrl
 
 module.exports = {
     Message: require('../models/message.model'),
+    PSA: require('../models/psa.model'),
 };

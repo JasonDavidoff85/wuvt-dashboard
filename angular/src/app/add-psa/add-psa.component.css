@@ -1,0 +1,11 @@
+mat-card {
+    max-width: 500px;
+}
+
+.textarea {
+    min-width: 450px;
+}
+
+.psaNumber {
+    max-width: 100px;
+}

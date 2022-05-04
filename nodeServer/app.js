@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/chat', require('./routes/chat.router'));
+app.use('/psa', require('./routes/psa.router'));
 app.use(errorHandler);
 
 

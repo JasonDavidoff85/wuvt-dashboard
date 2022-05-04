@@ -11,14 +11,6 @@
         <div *cdkVirtualFor="let message of messages" [ngClass]="message.from == 1 ? 'justify-content-end' : 'justify-content-start'" class="d-inline-flex m-2"><p [ngClass]="message.from == 1 ? 'blue' : 'grey'" class="text" >{{message.content}}</p></div>
         </div>
     </cdk-virtual-scroll-viewport>
-    <mat-card-footer>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-             <input matInput #chat placeholder="Send Message" (keyup.enter)="addMsg(chat.value)">
-            <!-- <input #chat type="message" class="form-control" id="mesageInput" aria-describedby="messageHelp" placeholder="Send Message" (keyup.enter)="addMsg(chat.value)"> -->
-            </mat-form-field>
-        </form>
-    </mat-card-footer>
 </mat-card>
 
 <button mat-button (click)="getMessages()">CLICK ME</button>

@@ -22,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { AddPSAComponent } from './add-psa/add-psa.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { SendMessageComponent } from './send-message/send-message.component';
     LastPlayedComponent,
     PsaComponent,
     SendMessageComponent,
+    AddPSAComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import { SendMessageComponent } from './send-message/send-message.component';
     MatSlideToggleModule,
     MatButtonModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    IvyCarouselModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

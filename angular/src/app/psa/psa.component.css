@@ -9,10 +9,7 @@
     position: absolute !important;
 } */
 .psa {
-    padding-left: 70px !important;
-    padding-right: 70px !important;
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
+    min-height: 175px;
 }
 
 .carousel-control-prev {
@@ -21,4 +18,12 @@
 
 .carousel-control-next {
     justify-content: flex-end !important;
+}
+
+mat-card {
+    min-height: 250px;
+}
+
+mat-icon {
+    cursor: pointer;
 }
