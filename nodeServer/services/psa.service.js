@@ -9,6 +9,11 @@ module.exports = {
 
 async function addPSA(addPSA) {
     console.log(addPSA)
+    const exist = await psa.findOne({number: addPSA.number})
+    if (exist) {
+        await exist.updateOne({isActive: true});
+        return
+    }
     const newMsg = new psa(addPSA);
     await newMsg.save();
 }

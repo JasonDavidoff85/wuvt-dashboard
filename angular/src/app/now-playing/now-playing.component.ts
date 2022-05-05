@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataFetchService } from '../_services/data-fetch.service';
-import {Subscription, timer, map, interval, Observable, mergeMap} from 'rxjs';  
+import {Subscription, timer, map, interval, Observable, mergeMap, switchMap, catchError, EMPTY} from 'rxjs';  
 
 @Component({
   selector: 'app-now-playing',
@@ -37,10 +37,10 @@ export class NowPlayingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    interval(2000).pipe(
-      mergeMap(count => this.dataFetch.getNowPlaying()),
-      mergeMap(data => {
-        this.tempTrack = data;
+    interval(2000)
+    .pipe(switchMap(() => this.dataFetch.getNowPlaying()))
+    .pipe(switchMap((data) => {
+      this.tempTrack = data;
         if (this.currentTrack.played.getTime() != new Date(this.tempTrack.played).getTime()) {
           this.currentTrack.dj = this.tempTrack.dj.airname;
           this.currentTrack.title = this.tempTrack.track.title;
@@ -49,20 +49,20 @@ export class NowPlayingComponent implements OnInit {
           this.currentTrack.played = new Date(this.tempTrack.played);
         }
         return this.dataFetch.getMBID(data.track.album, data.track.artist)
-      }),
-      mergeMap(album => this.dataFetch.getAlbumArt(album))
-    )
+    }))
+    .pipe(switchMap((album) => this.dataFetch.getAlbumArt(album)
+    .pipe(catchError((error)=> {
+      console.log("could not find album art")
+      this.isImageLoading = true;
+      return EMPTY
+      }))))
     .subscribe(
-      (alumbArt) => {
-          console.log("found image")
+      (albumArt) => {
+        console.log("found image")
           this.isImageLoading = true;
-          this.createImageFromBlob(alumbArt);
+          this.createImageFromBlob(albumArt);
           this.isImageLoading = false;
-          this.currentTrack.albumArt = alumbArt;
-      },
-      (error) => {
-        console.log("Could not find image")
-        this.isImageLoading = true;
+          this.currentTrack.albumArt = albumArt;
       }
     )
   }
